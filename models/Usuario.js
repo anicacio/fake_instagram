@@ -1,12 +1,11 @@
 let Usuario = (sequelize, DataTypes) => {
     return sequelize.define(
-        'Usuario',
-        {
+        'Usuario', {
             id: {
                 type: DataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true,
-                allowNull:false
+                allowNull: false
             },
             nome: {
                 type: DataTypes.STRING,
@@ -20,12 +19,12 @@ let Usuario = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             }
-        },{
+        }, {
             tableName: "usuarios",
             timestamps: false
         }
 
-    );
-}
+    )
+};
 
 module.exports = Usuario;

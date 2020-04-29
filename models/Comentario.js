@@ -1,30 +1,30 @@
-const Comentario = (sequelize, Datatypes)=>{
+const Comentario = (sequelize, Datatypes) => {
 
     return sequelize.define(
-        'Comentario',{
-            id:{
+        'Comentario', {
+            id: {
                 type: Datatypes.INTEGER,
-                primaryKey:true,
-                autoIncrement:true,
-                allowNull:false
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull: false
             },
-            texto:{
-                type:Datatypes.STRING,
-                allowNull:false,
+            texto: {
+                type: Datatypes.STRING,
+                allowNull: false,
             },
-            usuarios_id:{
-                type:Datatypes.INTEGER,
-                allowNull:false,
+            usuarios_id: {
+                type: Datatypes.INTEGER,
+                allowNull: false,
             },
-            posts_id:{
-                type:Datatypes.INTEGER,
-                allowNull:false,
+            posts_id: {
+                type: Datatypes.INTEGER,
+                allowNull: false,
             }
-        },
-        {
-            tableName:'comentarios',
-            timestamps:false
+        }, {
+            tableName: 'comentarios',
+            timestamps: false
         }
-    )};
+    )
+};
 
-    module.exports = Comentario;
+module.exports = Comentario;
