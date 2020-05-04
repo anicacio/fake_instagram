@@ -1,6 +1,13 @@
-const { sequelize, Post } = require('../models');
+const { sequelize, Comentario } = require('../models');
 
-Post.findByPk(1).then(
+Post.findByPk(
+    {
+        include: [
+            'post',
+            'usuario'
+        ]
+    }
+).then(
     post => {
         post.getComentarios().then(
             (comentarios) => {
