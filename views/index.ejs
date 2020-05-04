@@ -54,8 +54,9 @@
             <b>Postado no dia: 16/04/2020</b>
           </div> <!-- card itens -->
           <div class="card-comments">
+            <p><b><%= post.usuario.nome%>: </b><%= post.texto%></p>
             <% for(comentario of post.comentarios) { %>
-            <p><b><%= comentario.usuario.nome%></b><%= comentario.texto%></p>
+              <p><b><%= comentario.usuario.nome%>: </b> <%= comentario.texto%></p>
             <% } %>
           </div><!-- card comments -->
         </div><!-- card body -->

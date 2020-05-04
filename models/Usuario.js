@@ -29,7 +29,11 @@ let Usuario = (sequelize, DataTypes) => {
         usuario.hasMany(models.Post, {
             foreignKey: 'usuarios_id',
             as: 'posts'
-        })
+        });
+        usuario.hasMany(models.Comentario, {
+            foreignKey: 'usuarios_id',
+            as: 'comentarios'
+        });
     };
 
     return usuario;
