@@ -1,0 +1,51 @@
+A - 1º Piloto - Setup do projeto:
+    ✔ Fazer fork do projeto @done(20-04-29 15:30)
+    ✔ Clonar projeto para local @done(20-04-29 15:30)
+    ✔ Rodar script de criação do banco de dados @done(20-04-29 15:30)
+    ✔ Instalar @done(20-04-29 15:30)
+        ✔ sequelize @done(20-04-29 15:30)
+        ✔ sequelize-cli @done(20-04-29 15:30)
+        ✔ mysql2 @done(20-04-29 15:30)
+        ✔ dotenv @done(20-04-29 15:30)
+    ✔ Configurar conexão com o banco utilizando variáveis do ambiente (https://github.com/motdotla/dotenv) @done(20-04-29 15:30)
+  ✔ Testar conexão com o banco (node testeDb.js) @done(20-04-29 15:30)
+    ✔ Atualizar repositório remoto @done(20-04-29 15:30)
+    ✔ Adicionar outros membros como colaboradores @done(20-04-29 15:30)
+B - Comum - Setup do BD:
+    ✔ Clonar repositório @done(20-04-29 15:30)
+    ✔ Ajustar conexão a banco de dados alterando o ".env" @done(20-04-29 15:30)
+    ✔ Testar conexão com o banco (node testeDb.js) @done(20-04-29 15:30)
+
+C - 2º Piloto - Criação de Model Usuario:
+    ✔ Configurar .sequelizerc ["models": path.resolve("models")] @done(20-04-29 15:30)
+    ✔ Rodar o sequelize para criação/configuração de pasta de models [npx sequelize init:models] @done(20-04-29 15:30)
+    ✔ Alterar a linha 8 do models.index.js para que o require carregue as configurações corretamente. @done(20-04-29 15:30)
+    ✔ Criar model Usuario [Usuario.js] @done(20-04-29 15:30)
+    ✔ Testar se model Usuario (testes/testeModelUsuario.js) @done(20-04-29 15:30)
+
+D - 3º Piloto - Criação do Model Post:
+    ✔ Criar o model Post @done(20-04-29 15:30)
+
+E - 4º Piloto - Criação do Model Comentario:
+    ✔ Criar o model Comentario @done(20-04-29 15:29)
+
+F - 5º Piloto - Login:
+    ✔ Instalar bcrypt @done(20-05-04 13:37)
+    ✔ Instalar express-session @done(20-05-04 13:37)
+    ✔ Fazer o Login: @done(20-05-04 13:37)
+        ✔ Criar rota post para '/login' que direciona para AuthController.login @done(20-05-04 13:37)
+        ✔ Criar método AuthController.login @done(20-05-04 13:37)
+            Caso o usuário com o email e senha digitados no form exista e tenha a senha
+            correta, esse método deve criar uma session chamada usuario e armazenar
+            esse usuario nesse session. Feito isso, direcionar para a rota "/home"
+            Caso o usuário/senha não esteja correto, deve direcionar para "/" passando
+            status de erro na url
+        ✔ Criar um Middlerware em middlewares/VerificaUsuarioLogado.js: @done(20-05-04 13:37)
+            Esse middleware verifica se o usuário está logado. Caso não esteja, direciona o
+            visitante para '/'. Caso ele esteja, next()!
+        ✔ Proteger a rota "/home" com VerificaUsuarioLogado.js @done(20-05-04 13:37)
+
+
+
+G - 6º Piloto - Exibir feed:
+    ✔ Alterar rota get '/home' para direcionar controller HomeController.show @done(20-05-04 13:37)
