@@ -1,6 +1,6 @@
 const Comentario = (sequelize, Datatypes) => {
 
-    return sequelize.define(
+    let comentario = sequelize.define(
         'Comentario', {
             id: {
                 type: Datatypes.INTEGER,
@@ -24,7 +24,14 @@ const Comentario = (sequelize, Datatypes) => {
             tableName: 'comentarios',
             timestamps: false
         }
-    )
+    );
+    comentario.associate = (models) => {
+        comentario.belongsTo(models.Post, {
+            foreignKey:'posts_id', 
+            as:'post'
+        })
+    };
+    return comentario;
 };
 
 module.exports = Comentario;
